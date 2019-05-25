@@ -1,10 +1,8 @@
 # Enron Fraud Detection 
-Author: Eduardo Kaneko
+Author: Eduardo Kaneko <br>
 School: Udacity's Nanodegree
 
 ## Overview
---------------------------
-
 The Enron scandal, publicized in October 2001, eventually led to the bankruptcy of the Enron Corporation, an American energy company based in Houston, Texas, and the de facto dissolution of Arthur Andersen, which was one of the five largest audit and accountancy partnerships in the world. In addition to being the largest bankruptcy reorganization in American history at that time, Enron was cited as the biggest audit failure.
 
 Enron was formed in 1985 by Kenneth Lay after merging Houston Natural Gas and InterNorth. Several years later, when Jeffrey Skilling was hired, he developed a staff of executives that – by the use of accounting loopholes, special purpose entities, and poor financial reporting – were able to hide billions of dollars in debt from failed deals and projects. Chief Financial Officer Andrew Fastow and other executives not only misled Enron's Board of Directors and Audit Committee on high-risk accounting practices, but also pressured Arthur Andersen to ignore the issues.
@@ -17,17 +15,16 @@ As a consequence of the scandal, new regulations and legislation were enacted to
 
 
 ## The Project
---------------------------
 In 2000, Enron was one of the largest companies in the United States. Already in 2002, it collapsed and broke due to a fraud that involved much of the corporation. Resulting in a federal investigation, many data that is normally confidential, have become public, including tens of thousands of emails and financial details to executives of the highest levels of the company. In this project, I have played the detective, and put my skills into building a predictive model that determined whether or not an employee is an employee of interest (POI). An employee of concern is an employee who participated in the Enron scandal. To assist me in this detective work, udacity has combined the financial and e-mail data of the employees investigated in this fraud case, which means that they have been indicted, have entered into agreements with the government, or have testified in exchange for immunity in the case.
 
 I have followed the process below: 
-- 1. Importing Libraries
-- 2. Gather The Data
-- 3. Exploration Data Analysis
-- 4. Outlier Detection
-- 5. Features Selection
-- 6. Algorithms Test
-- 7. Evaluation
+1. Importing Libraries
+2. Gather The Data
+3. Exploration Data Analysis
+4. Outlier Detection
+5. Features Selection
+6. Algorithms Test
+7. Evaluation
 
 
 ## References
