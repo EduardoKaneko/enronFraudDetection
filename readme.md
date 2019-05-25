@@ -2,6 +2,13 @@
 Author: Eduardo Kaneko <br>
 School: Udacity's Nanodegree
 
+
+## Main Files:
+- **enronFraud_detection.ipynb**: It is the main code file, where all the project is.
+- **enron_report.pdf**: It is where the questions have been answered.
+- **enron_report.html**: It is where the questions have been answered, but as .html version.
+
+
 ## Overview
 The Enron scandal, publicized in October 2001, eventually led to the bankruptcy of the Enron Corporation, an American energy company based in Houston, Texas, and the de facto dissolution of Arthur Andersen, which was one of the five largest audit and accountancy partnerships in the world. In addition to being the largest bankruptcy reorganization in American history at that time, Enron was cited as the biggest audit failure.
 
