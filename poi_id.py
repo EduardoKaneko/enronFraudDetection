@@ -10,6 +10,8 @@ import numpy as np
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 from sklearn.model_selection import GridSearchCV
 from time import time
+import pickle
+import sys
 
 ### Task 1: Select what features you'll use.
 ### features_list is a list of strings, each of which is a feature name.
@@ -122,5 +124,15 @@ print("f1-score of GaussianNB classifer is  : ",f1_score(prediction, labels_test
 ### check your results. You do not need to change anything below, but make sure
 ### that the version of poi_id.py that you submit can be run on its own and
 ### generates the necessary .pkl files for validating your results.
+CLF_PICKLE_FILENAME = "my_classifier.pkl"
+DATASET_PICKLE_FILENAME = "my_dataset.pkl"
+FEATURE_LIST_FILENAME = "my_feature_list.pkl"
+
+with open(CLF_PICKLE_FILENAME, "wb") as clf_outfile:
+    pickle.dump(clf, clf_outfile)
+with open(DATASET_PICKLE_FILENAME, "wb") as dataset_outfile:
+    pickle.dump(my_dataset, dataset_outfile)
+with open(FEATURE_LIST_FILENAME, "wb") as featurelist_outfile:
+    pickle.dump(features_list, featurelist_outfile)
 
 # dump_classifier_and_data(clf, my_dataset, features_list)
