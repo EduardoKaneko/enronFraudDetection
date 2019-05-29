@@ -25,32 +25,32 @@ with open("final_project_dataset.pkl", "rb") as data_file:
     data_dict = pickle.load(data_file)
 
 # Converting the given pickled Enron data to a pandas dataframe
-df = pd.DataFrame.from_records(list(data_dict.values()))
+enron_df = pd.DataFrame.from_records(list(data_dict.values()))
 
 # set the index of df to be the employees series:
 employees = pd.Series(list(data_dict.keys()))
-df.set_index(employees, inplace=True)
+enron_df.set_index(employees, inplace=True)
 
 # Coerce numeric values into floats or ints; also change NaN to zero:
-df_clean = df.apply(lambda x : pd.to_numeric(x, errors = 'coerce')).copy().fillna(0)
+enron_df_new = enron_df.apply(lambda x : pd.to_numeric(x, errors = 'coerce')).copy().fillna(0)
 
 # Dropping column 'email_address' as not required in analysis
-df_clean.drop('email_address', axis = 1, inplace = True)
+enron_df_new.drop('email_address', axis = 1, inplace = True)
 
 ### Task 2: Remove outliers
-df_clean.drop(['TOTAL', 'THE TRAVEL AGENCY IN THE PARK', 'FREVERT MARK A',
+enron_df_new.drop(['TOTAL', 'THE TRAVEL AGENCY IN THE PARK', 'FREVERT MARK A',
     'MARTIN AMANDA K', 'BHATNAGAR SANJAY'], axis = 0, inplace = True)
 
 ### Task 3: Create new feature(s)
-df_clean['bonus-to-salary_ratio'] = df_clean['bonus']/df_clean['salary']
-df_clean['fraction_mail_from_poi'] = df_clean['from_poi_to_this_person']/df_clean['from_messages']
-df_clean['fraction_mail_to_poi'] = df_clean['from_this_person_to_poi']/df_clean['to_messages']
+enron_df_new['bonus-to-salary_ratio'] = enron_df_new['bonus']/enron_df_new['salary']
+enron_df_new['fraction_mail_from_poi'] = enron_df_new['from_poi_to_this_person']/enron_df_new['from_messages']
+enron_df_new['fraction_mail_to_poi'] = enron_df_new['from_this_person_to_poi']/enron_df_new['to_messages']
 
 #clean all 'inf' values which we got if the person's from_messages = 0
-df_clean = df_clean.replace('inf', 0)
-df_clean = df_clean.fillna(0)
+enron_df_new = enron_df_new.replace('inf', 0)
+enron_df_new = enron_df_new.fillna(0)
 # Converting the above modified dataframe to a dictionary
-enron_dict = df_clean.to_dict('index')
+enron_dict = enron_df_new.to_dict('index')
 
 ### Store to my_dataset for easy export below.
 my_dataset = enron_dict
@@ -122,5 +122,3 @@ print("f1-score of GaussianNB classifer is  : ",f1_score(prediction, labels_test
 ### check your results. You do not need to change anything below, but make sure
 ### that the version of poi_id.py that you submit can be run on its own and
 ### generates the necessary .pkl files for validating your results.
-
-# dump_classifier_and_data(clf, my_dataset, features_list)
